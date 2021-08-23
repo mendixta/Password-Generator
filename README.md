@@ -1,5 +1,3 @@
-# Password-Generator
-
 # Password Generator 
 
 # Summary:
