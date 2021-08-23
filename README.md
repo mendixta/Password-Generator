@@ -31,3 +31,4 @@ Since JavaScript is still very much new in my mind, working with not much starte
 
 # Screenshot / Final Product: 
 
+<img src='Password-Generator-Screenshot.png'>
