@@ -5,6 +5,7 @@ var generateBtn = document.querySelector("#generate");
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
+  
   passwordText.value = password;
 
 }
@@ -17,7 +18,7 @@ var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var lowerCase = "abcdefghijklmnopqrstuvwxyz";
 var numbers = "0123456789";
 var special = "!@#$%^&*()[]/+=`|";
-var chosenCharacters = "";
+var possibleResult = "";
 
 // Generating the password
 function generatePassword () {
@@ -25,6 +26,8 @@ function generatePassword () {
   var length = window.prompt("How long would you like your password to be?");
   if(isNaN(length)){
     alert("Please choose a number between 8 and 128!");
+
+
     return generatePassword()
   }
 // What happens if the user doesnt pick a number from 8 - 128
@@ -44,28 +47,28 @@ if (!hasupperCase&&!haslowerCase&&!hasnumbers&&!hasSpecial){
   return generatePassword()
 }
 
+for (var i = 0; i < length; i++) {
+  var random = Math.floor (Math.random() * possibleResult.length);
+}
+
 if(hasupperCase){
-  chosenCharacters += upperCase
+  possibleResult += upperCase
 }
 
 if (haslowerCase){
-  chosenCharacters += lowerCase
+  possibleResult += lowerCase
 }
  
 if (hasSpecial) {
-  chosenCharacters += special
+  possibleResult += special
 }
 
 if (hasnumbers) {
-  chosenCharacters += numbers
+  possibleResult += numbers
 }
 
 for (var i = 0; i < length; i++) {
-  var random = Math.floor (Math.random() * chosenCharacters.length);
-}
-
-for (var i = 0; i < length; i++) {
-  result += chosenCharacters.charAt(Math.floor(Math.random() * chosenCharacters.length));
+  result += possibleResult.charAt(Math.floor(Math.random() * possibleResult.length));
 }
 return result;
 }
